@@ -29,10 +29,10 @@ Ctrl & q::
     Send !{F4}
   }
 
-vk1Dsc07B & up::MouseMove, 0, -10 [, 1, R]
-vk1Dsc07B & left::MouseMove, -10, 0 [, 1, R]
-vk1Dsc07B & right::MouseMove, 10, 0 [, 1, R]
-vk1Dsc07B & down::MouseMove, 0, 10 [, 1, R]
+vk1Dsc07B & up::MouseMove, 0, -10, 1, R
+vk1Dsc07B & left::MouseMove, -10, 0, 1, R
+vk1Dsc07B & right::MouseMove, 10, 0, 1, R
+vk1Dsc07B & down::MouseMove, 0, 10, 1, R
 ; vk1Dsc07B & c::MouseClick, left
 vk1Dsc07B & c::Send {Click}
 ;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!}}}
@@ -154,7 +154,7 @@ vk1Dsc07B & h::
     Send +{Left}
   }
   else if GetKeyState("RCtrl", "P") {
-    MouseMove, -100, 0 [, 1, R]
+    MouseMove, -100, 0, 1, R
   }
   else Send {Left}
 Return
@@ -171,7 +171,7 @@ vk1Dsc07B & j::
     Send +{Down}
   }
   else if GetKeyState("RCtrl", "P") {
-    MouseMove, 0, 100 [, 1, R]
+    MouseMove, 0, 100, 1, R
   }
   else Send {Down}
 Return
@@ -273,7 +273,7 @@ vk1Dsc07B & k::
     Send +{Up}
   }
   else if GetKeyState("RCtrl", "P") {
-    MouseMove, 0, -100 [, 1, R]
+    MouseMove, 0, -100, 1, R
   }
   else Send {Up}
 Return
@@ -291,7 +291,7 @@ vk1Dsc07B & l::
     Send +{Right}
   }
   else if GetKeyState("RCtrl", "P") {
-    MouseMove, 100, 0 [, 1, R]
+    MouseMove, 100, 0, 1, R
   }
   else Send {Right}
 Return
