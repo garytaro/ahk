@@ -18,8 +18,6 @@
 
 ;実験中
 ;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!{{{
-LCtrl & e::Send {WheelDown}
-LCtrl & y::Send {WheelUp}
 LCtrl & d::Send {PgDn}
 LCtrl & u::Send {PgUp}
 vk1Dsc07B & f::Send #t
@@ -28,14 +26,19 @@ Ctrl & q::
   if (GetKeyState("Shift", "P") || GetKeyState("Alt", "P") ) {
     Send !{F4}
   }
+;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!}}} 
 
+;--------------------------------
+;マウス関連{{{
+;--------------------------------
+LCtrl & e::Send {WheelDown}
+LCtrl & y::Send {WheelUp}
 vk1Dsc07B & up::MouseMove, 0, -10, 1, R
 vk1Dsc07B & left::MouseMove, -10, 0, 1, R
 vk1Dsc07B & right::MouseMove, 10, 0, 1, R
 vk1Dsc07B & down::MouseMove, 0, 10, 1, R
-; vk1Dsc07B & c::MouseClick, left
 vk1Dsc07B & c::Send {Click}
-;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!}}}
+;}}}
 
 ;--------------------------------
 ;ランチャ{{{
@@ -46,7 +49,7 @@ vk1Dsc07B & c::Send {Click}
 ^!t::Run, cmd /k prompt $g
 ^!r::Run, mstsc
 ^!c::Run, C:\Program Files\ConEmu\ConEmu64
-^!d::Run, %USERPROFILE%\Dropbox\BackUp\Software\sleepdisplay_vista\SleepDisplay.exe
+^!d::Run, %USERPROFILE%\Dropbox\tool\software\sleepdisplay_vista\SleepDisplay.exe
 ;}}}
 
 ;--------------------------------
@@ -222,7 +225,7 @@ Return
   ^b::
     IME_SET(0)
     Send !d
-    PasteString("%USERPROFILE%\Dropbox\BackUp\scripts\mdbk.bat")
+    PasteString("%USERPROFILE%\Dropbox\tool\scripts\mdbk.bat")
     Send {Enter}
     Return
   Return
@@ -349,6 +352,29 @@ Return
   LCtrl & e::Send ^e
   LCtrl & y::Send ^y
   LCtrl & d::Send ^d
+#IfWinActive
+
+;Virtualbox
+#IfWinActive ahk_class QWidget
+  LCtrl & h::sendInput ^h
+  LCtrl & u::sendInput ^u
+  LCtrl & k::sendInput ^k
+  LCtrl & w::sendInput ^w
+  LCtrl & e::sendInput ^e
+  LCtrl & y::sendInput ^y
+  LCtrl & d::sendInput ^d
+  ^!t::send ^!t
+#IfWinActive
+
+#IfWinActive ahk_exe RLogin.exe
+  LCtrl & h::sendInput ^h
+  LCtrl & u::sendInput ^u
+  LCtrl & k::sendInput ^k
+  LCtrl & w::sendInput ^w
+  LCtrl & e::sendInput ^e
+  LCtrl & y::sendInput ^y
+  LCtrl & d::sendInput ^d
+  ^!t::send ^!t
 #IfWinActive
 
 ;Vim
